@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>BASTL Laser Tool</_name>
+    <id>bastl.sk</id>
+	<dependency type="executable" location="extensions">laser_bastl.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+
+        <param name="tab" type="notebook">
+          <page name="gcode" gui-text="g-code">
+            <param name="laser-mode" type="enum" _gui-text="Laser mode:">
+              <item value="rep">Repetier Laser Mode</item>
+              <item value="def">GRBL on/off</item>
+            </param>
+            <param name="laser-command" type="string" _gui-text="Laser ON Command:">M03</param>
+	    <param name="laser-off-command" type="string" _gui-text="Laser OFF Command:">M05</param>
+	    <param name="alt-intensity-command" type="string" _gui-text="Laser intensity Command:"></param>
+	    <param name="speed-modulation" type="boolean" _gui-text="Use speed to modulate intensity:"></param>
+	    <param name="prologue" type="string" _gui-text="Additional initialization:">G28</param>
+	    <param name="z-base" type="float" min="-0" max="200" _gui-text="Initial Z-level (mm or in):">0.00</param>
+	    <param name="x-offset" type="float" min="-1000" max="1000" _gui-text="Initial X-offset (mm or in):">0.00</param>
+	    <param name="y-offset" type="float" min="-1000" max="1000" _gui-text="Initial Y-offset (mm or in):">0.00</param>
+
+ 	    <param name="travel-speed" type="int" min="0" max="10000" _gui-text="Travel Speed (mm/min or in/min):">3000</param>
+	    <param name="laser-speed" type="int" min="0" max="4000" _gui-text="Laser Speed (mm/min or in/min):">100</param>
+	    <param name="laser-power" type="int" min="0" max="20000" _gui-text="Laser Power S# (0-255 or 0-12000):">255</param>
+	    <param name="power-delay" type="float" min="0" max="1000" _gui-text="Power-On Delay (ms or s):">0</param>	
+	    <param name="passes" type="int" min="1" max="100" _gui-text="Passes:">1</param>
+	    <param name="pass-depth" type="float" min="0" max="10" _gui-text="Pass Depth (mm or in):">1</param>
+	    <param name="directory" type="string" _gui-text="Directory:"></param>
+	    <param name="filename" type="string" _gui-text="Filename:">output.gcode</param>
+	    <param name="add-numeric-suffix-to-filename" type="boolean" _gui-text="Add numeric suffix to filename">true</param>
+<!--	    <param name="log-filename" type="string" _gui-text="log filename:"></param>
+	    <param name="create-log" type="boolean" _gui-text="Create log:">false</param>
+	    <param name="suppress-all-messages" type="boolean" _gui-text="Suppress All Messages:">true</param>
+	    <param name="engraving-draw-calculation-paths" type="boolean" _gui-text="Draw additional graphics to debug engraving path:">false</param>
+	    <param name="biarc-max-split-depth" type="int" min="1" max="10" _gui-text="Defines maximum depth of splitting while approximating using biarcs.:">4</param> -->
+            <param name="unit" type="enum" _gui-text="All Units (mm or in):">
+              <item value="G21 (All units in mm)">mm</item>
+              <item value="G20 (All units in inches)">in</item>
+            </param>
+          </page>
+          <page name="rep" gui-text="Repetier">
+	    <param name="acc-control" type="boolean" _gui-text="Enable acceleration control:"></param>
+	    <param name="repetier-steps" type="int" min="1" max="500"  _gui-text="Printer X/Y steps per mm:">1</param>
+	    <param name="repetier-acc" type="int" min="1" max="2000" _gui-text="Printer X/Y acceleration:">1</param>
+	    <param name="x2" type="description">(Use M360 command to obtain these values)</param>
+          </page>
+        </param>
+
+	<effect>
+		<effects-menu>
+			<submenu _name="Generate Laser Gcode"/>
+		</effects-menu>
+		<object-type>path</object-type>
+  	</effect>
+
+	<script>
+		<command reldir="extensions" interpreter="python">laser_bastl.py</command>
+	</script>
+
+</inkscape-extension>
