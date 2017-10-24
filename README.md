@@ -9,7 +9,7 @@ Features:
 
 * supports Repetier firmware *Laser Mode*
 * laser intensity is taken from "transparency" attribute of path (transparency attribute of compounds and groups are ignored)
-* differentiates separately G1 (cutting) and G0 (move) commands (originally all moves and cuts were implemented by G1 command
+* differentiates `G1` (cutting) and `G0` (move) commands (in original extensions all moves and cuts were implemented as `G1` command)
 * speed modulation of laser intensity
 * acceleration control for low speed moves
 * support for external PWM generator
@@ -18,11 +18,11 @@ Features:
 
 Following options are available:
 
-- **Laser Mode:**  flavour of generated g-code: compatible with Repetier Laser Mode ir GRBL
-- **Laser ON Command:**  Command to turn laser on in GRBL mode, setting of laser intensity in Repetier mode. Typically M03.
-- **Laser OFF Command:** Command to turn laser off (typically M05). Used in GRBL mode only.
-- **Laser Intensity Command:** Code to control external PWM module. When defined, "Laser ON" command always uses maximum laser power.
-- **Use speed to Control Intensity:** Laser intensity is controlled by move speed. When enabled, "Laser ON" command always uses maximum laser power.
+- **Laser Mode:**  flavour of generated g-code: compatible with Repetier Laser Mode or GRBL
+- **Laser ON Command:**  Command to turn laser on in GRBL mode, setting of laser intensity in Repetier mode. Typically `M03`.
+- **Laser OFF Command:** Command to turn laser off (typically `M05`). Used in GRBL mode only.
+- **Laser Intensity Command:** Code to control external PWM module. When defined, *"Laser ON"* command always uses maximum laser power.
+- **Use speed to Control Intensity:** Laser intensity is controlled by move speed. When enabled, *"Laser ON"* command always uses maximum laser power.
 - **Additional initialization:** additional initialization code
 - **Initial Z-level:** Initial (zero) level; at this level laser should be focused on material surface
 - **X-offset:** X offset
