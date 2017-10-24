@@ -9,16 +9,16 @@
           <page name="gcode" gui-text="g-code">
             <param name="laser-mode" type="enum" _gui-text="Laser mode:">
               <item value="rep">Repetier Laser Mode</item>
-              <item value="def">GRBL on/off</item>
+              <item value="def">GRBL</item>
             </param>
             <param name="laser-command" type="string" _gui-text="Laser ON Command:">M03</param>
 	    <param name="laser-off-command" type="string" _gui-text="Laser OFF Command:">M05</param>
 	    <param name="alt-intensity-command" type="string" _gui-text="Laser intensity Command:"></param>
-	    <param name="speed-modulation" type="boolean" _gui-text="Use speed to modulate intensity:"></param>
+	    <param name="speed-modulation" type="boolean" _gui-text="Use speed to control intensity:"></param>
 	    <param name="prologue" type="string" _gui-text="Additional initialization:">G28</param>
 	    <param name="z-base" type="float" min="-0" max="200" _gui-text="Initial Z-level (mm or in):">0.00</param>
-	    <param name="x-offset" type="float" min="-1000" max="1000" _gui-text="Initial X-offset (mm or in):">0.00</param>
-	    <param name="y-offset" type="float" min="-1000" max="1000" _gui-text="Initial Y-offset (mm or in):">0.00</param>
+	    <param name="x-offset" type="float" min="-1000" max="1000" _gui-text="X-offset (mm or in):">0.00</param>
+	    <param name="y-offset" type="float" min="-1000" max="1000" _gui-text="Y-offset (mm or in):">0.00</param>
 
  	    <param name="travel-speed" type="int" min="0" max="10000" _gui-text="Travel Speed (mm/min or in/min):">3000</param>
 	    <param name="laser-speed" type="int" min="0" max="4000" _gui-text="Laser Speed (mm/min or in/min):">100</param>

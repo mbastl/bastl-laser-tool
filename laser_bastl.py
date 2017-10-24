@@ -3282,7 +3282,7 @@ class laser_gcode(inkex.Effect):
                "penetration feed": self.options.laser_speed,
                "feed": self.options.laser_speed,
                "gcode before path A1": ("M400\nG4 P0\n" + self.options.intensity_command + " S"),
-               "gcode before path A2": ("M400\nG4 P0\n"),
+               "gcode before path A2": ("M400\nG4 P0"),
                "gcode after path": ("G4 P0\n" + self.move_cmd + " F" + self.options.travel_speed),
                }
         else:
@@ -3292,10 +3292,10 @@ class laser_gcode(inkex.Effect):
                "id": "Laser Engraver",
                "penetration feed": self.options.laser_speed,
                "feed": self.options.laser_speed,
-               "gcode before path A": ("G4 P0 \n" + self.options.laser_command + " S"),
+               "gcode before path A": ("G4 P0\n" + self.options.laser_command + " S"),
                "gcode before path A1": ("\n" + self.options.intensity_command + " S"),
                "gcode before path B": ("\nG4 P" + self.options.power_delay),
-               "gcode after path": ("G4 P0 \n" + self.options.laser_off_command + " S0" + "\n" + self.move_cmd + " F" + self.options.travel_speed),
+               "gcode after path": ("G4 P0\n" + self.options.laser_off_command + " S0" + "\n" + self.move_cmd + " F" + self.options.travel_speed),
                }
 
         self.get_info()
