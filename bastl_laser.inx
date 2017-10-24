@@ -2,7 +2,7 @@
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
     <_name>BASTL Laser Tool</_name>
     <id>bastl.sk</id>
-	<dependency type="executable" location="extensions">laser_bastl.py</dependency>
+	<dependency type="executable" location="extensions">bastl_laser.py</dependency>
 	<dependency type="executable" location="extensions">inkex.py</dependency>
 
         <param name="tab" type="notebook">
@@ -49,13 +49,13 @@
 
 	<effect>
 		<effects-menu>
-			<submenu _name="Generate Laser Gcode"/>
+			<submenu _name="BASTL Tools"/>
 		</effects-menu>
 		<object-type>path</object-type>
   	</effect>
 
 	<script>
-		<command reldir="extensions" interpreter="python">laser_bastl.py</command>
+		<command reldir="extensions" interpreter="python">bastl_laser.py</command>
 	</script>
 
 </inkscape-extension>
