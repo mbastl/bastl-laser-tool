@@ -98,7 +98,7 @@ G1 X0 Y0
 M18
 """,
 'rfooter': """;--- start of default footer
-G X0 Y0
+G0 X0 Y0
 M451
 M84
 """
