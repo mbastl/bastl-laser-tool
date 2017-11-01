@@ -1,7 +1,6 @@
 # BASTL Laser Tool
 
-Inkscape extension to generate gcode laser cutter comptible with 3D printer firmwares. In the first place oriented to
-Repetier firmware.
+Inkscape extension to generate laser cutter g-code comptible with 3D printer firmwares. In the first place oriented to Repetier firmware.
 
 It is based on [**JFU Laser tool**](http://www.fucik.name/hw/laser/jfu_laser.php) and [**J Tech Photonics Laser Tool**](https://jtechphotonics.com/?page_id=2012).
 
