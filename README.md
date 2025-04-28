@@ -2,6 +2,9 @@
 
 Inkscape extension to generate laser cutter g-code comptible with 3D printer firmwares. In the first place oriented to Repetier firmware.
 
+**Compatibility note:** This tool is compatible with Inkscape version 0.95. It cannot be used with Inkscape version 1.0 and newer.
+
+
 It is based on [**JFU Laser tool**](http://www.fucik.name/hw/laser/jfu_laser.php) and [**J Tech Photonics Laser Tool**](https://jtechphotonics.com/?page_id=2012).
 
 Features:
