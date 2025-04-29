@@ -2611,7 +2611,7 @@ class laser_gcode(inkex.Effect):
             elif self.options.unit == "inch" :
                 self.header += "G20\n"
             if self.options.prologue != "" : 
-                self.header += self.options.prologue
+                self.header += self.options.prologue.replace("|","\n")
                 self.header += "\n"
             if self.options.z_base != 0.0: 
                 self.header += "G91\n" + self.move_cmd + " Z" + ("%.3F" % self.options.z_base) + "\nG90\n"

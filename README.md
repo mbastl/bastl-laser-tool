@@ -25,7 +25,7 @@ Following options are available:
 - **Laser OFF Command:** Command to turn laser off (typically `M05`). Used in GRBL mode only.
 - **Laser Intensity Command:** Code to control external PWM module. When defined, *"Laser ON"* command always uses maximum laser power.
 - **Use speed to Control Intensity:** Laser intensity is controlled by move speed. When enabled, *"Laser ON"* command always uses maximum laser power.
-- **Additional initialization:** additional initialization code
+- **Additional initialization:** additional initialization code; m ultiple commands can be separated by "|" (vertical bar character)
 - **Initial Z-level:** Initial (zero) level; at this level laser should be focused on material surface
 - **X-offset:** X offset
 - **Y-offset:** X offset
