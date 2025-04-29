@@ -2456,7 +2456,7 @@ class laser_gcode(inkex.Effect):
         self.OptionParser.add_option("",   "--create-log",                      action="store", type="inkbool",         dest="log_create_log",                      default=False,                          help="Create log files")
         self.OptionParser.add_option("",   "--log-filename",                    action="store", type="string",          dest="log_filename",                        default='',                             help="Create log files")
         self.OptionParser.add_option("",   "--engraving-draw-calculation-paths",action="store", type="inkbool",         dest="engraving_draw_calculation_paths",    default=False,                          help="Draw additional graphics to debug engraving path")
-        self.OptionParser.add_option("",   "--unit",                            action="store", type="string",          dest="unit",                                default="G21 (All units in mm)",        help="Units either mm or inches")
+        self.OptionParser.add_option("",   "--unit",                            action="store", type="string",          dest="unit",                                default="mm",        help="Units either mm or inches")
         self.OptionParser.add_option("",   "--active-tab",                      action="store", type="string",          dest="active_tab",                          default="",                             help="Defines which tab is active")
         self.OptionParser.add_option("",   "--biarc-max-split-depth",           action="store", type="int",             dest="biarc_max_split_depth",               default="4",                            help="Defines maximum depth of splitting while approximating using biarcs.")                
         self.OptionParser.add_option("",   "--tab",                             action="store", type="string",             dest="tab",                                 default="",                           help="Use speed to modulate intensity")
@@ -2606,9 +2606,9 @@ class laser_gcode(inkex.Effect):
                 else:
                   self.footer = defaults['footer']
                 
-            if self.options.unit == "G21 (All units in mm)" : 
+            if self.options.unit == "mm" : 
                 self.header += "G21\n"
-            elif self.options.unit == "G20 (All units in inches)" :
+            elif self.options.unit == "inch" :
                 self.header += "G20\n"
             if self.options.prologue != "" : 
                 self.header += self.options.prologue
@@ -3208,11 +3208,11 @@ class laser_gcode(inkex.Effect):
         #    myunit = 72
         #if self.getDocumentUnit() == "pc" :
         #    myunit = 6
-        if self.options.unit == "G21 (All units in mm)" : 
+        if self.options.unit == "mm" : 
             points = [[0.,0.,0.],[100.,0.,0.],[0.,100.,0.]]
             orientation_scale = self.uutounit(1,"mm")  # 3.5433070660 assume all measuer is in mm 96/25.4 for px
             print_("orientation_scale < 0 ===> switching to mm units=%0.10f"%orientation_scale )
-        elif self.options.unit == "G20 (All units in inches)" :
+        elif self.options.unit == "inch)" :
             points = [[0.,0.,0.],[5.,0.,0.],[0.,5.,0.]]
             orientation_scale = self.uutounit(1,"in") # 90 assume all measure is in mm 96 for px
             print_("orientation_scale < 0 ===> switching to inches units=%0.10f"%orientation_scale )

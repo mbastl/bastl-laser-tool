@@ -38,7 +38,7 @@ Following options are available:
 - **Directory:**  directory where created files are placed
 - **Filename:**  name of output file.
 - **Add numeric suffix to filename:** When enabled, sequentce number is attached to filename
-- **All Units:**  Units used in output file (mm or inch)
+- **Units:**  Units used in output file (mm or inch)
 - **Live preview:**  Live changes on screen, when parameters are changed.
 - **Enable acceleration control** - enables acceleration control for low speed moves
 - **Printer X/Y steps per mm:** - number of steps per mm of stepper motor (both X and Y axes)
